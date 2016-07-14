@@ -6,7 +6,9 @@ use yii\base\InvalidConfigException;
 
 /**
  * Yii 2.0 Telegram Log Target
+ * TelegramTarget sends selected log messages to the specified telegram chats or channels
  *
+ * You should set (telegram bot token)[https://core.telegram.org/bots#botfather] and chatId in your config file like below code:
  * ```php
  * 'log' => [
  *     'targets' => [
@@ -19,12 +21,21 @@ use yii\base\InvalidConfigException;
  *     ],
  * ],
  * ```
- * 
+ *
  * @author Ali Irani <ali@irani.im>
  */
 class TelegramTarget extends Target
 {
+    /**
+     * (Telegram bot token)[https://core.telegram.org/bots#botfather]
+     * @var string
+     */
     public $botToken;
+
+    /**
+     * Destination chat id or channel username
+     * @var int|string
+     */
     public $chatId;
 
     /**
