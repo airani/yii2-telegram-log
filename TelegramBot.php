@@ -33,6 +33,9 @@ class TelegramBot extends Component
         }
     }
 
+    /**
+     * @return Client
+     */
     public function getClient()
     {
         if ($this->_client) {
@@ -43,7 +46,7 @@ class TelegramBot extends Component
     }
 
     /**
-     * Send message to telegram chat or channel
+     * Send message to the telegram chat or channel
      * @param int|string $chat_id
      * @param string $text
      * @param string $parse_mode
@@ -51,6 +54,8 @@ class TelegramBot extends Component
      * @param bool $disable_notification
      * @param int $reply_to_message_id
      * @param null $reply_markup
+     * @link https://core.telegram.org/bots/api#sendmessage
+     * return array
      */
     public function sendMessage($chat_id, $text, $parse_mode = null, $disable_web_page_preview = null, $disable_notification = null, $reply_to_message_id = null, $reply_markup = null)
     {
